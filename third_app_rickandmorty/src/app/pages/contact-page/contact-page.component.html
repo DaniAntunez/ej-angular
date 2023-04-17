@@ -1,0 +1,31 @@
+<form [formGroup]="contactForm" (ngSubmit)="submit()">
+    <label>
+        <input type="text" formControlName="email" placeholder="Email"/>
+    </label>
+    <span *ngIf="isSubmit && contactForm.controls['email'].errors?.['required']">file required</span>
+    <span *ngIf="isSubmit && contactForm.controls['email'].errors">file invalid</span>
+
+    <label>
+        <input type="text" formControlName="name" placeholder="Name"/>
+    </label>
+    <span *ngIf="isSubmit && contactForm.controls['name'].errors?.['required']">file required</span>
+    <span *ngIf="isSubmit && contactForm.controls['name'].errors?.['minlength']">min charcters 3</span>
+    <span *ngIf="isSubmit && contactForm.controls['name'].errors?.['maxlength']">max characters 20</span>
+
+    <label>
+        <input type="number" formControlName="age" placeholder="Age"/>
+    </label>
+    <span *ngIf="isSubmit && contactForm.controls['age'].errors?.['required']">file required</span>
+    <span *ngIf="isSubmit && contactForm.controls['age'].errors?.['min']">min age 16</span>
+
+    <label>
+        <textarea formControlName="description" placeholder="Description"></textarea>
+    </label>
+    <span *ngIf="isSubmit && contactForm.controls['description'].errors?.['required']">file required</span>
+    <span *ngIf="isSubmit && contactForm.controls['description'].errors?.['minlength']">min charcters 10</span>
+    <span *ngIf="isSubmit && contactForm.controls['description'].errors?.['maxlength']">max characters 100</span>
+
+    <div>
+        <button>Enviar</button>
+    </div>
+</form>

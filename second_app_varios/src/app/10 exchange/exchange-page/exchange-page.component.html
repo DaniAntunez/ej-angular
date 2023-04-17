@@ -1,0 +1,27 @@
+<p>tarea10: treasure game</p>
+
+<div class="main">
+
+  <input type="number" [(ngModel)]="numero" (ngModelChange)="actualizarValor()" [min]="1" />
+
+  <select [(ngModel)]="monedaSeleccionada" (ngModelChange)="actualizarValor()">
+    <option *ngFor="let opciones of monedas" [value]="opciones">
+      {{ opciones }}
+    </option>
+  </select>
+
+  <div class="divisas">
+    <div *ngFor="let tasa of datos | keyvalue">
+      <div class="card" (click)="actualizarSeleccion(tasa.key)">
+        <div class="title">
+            <img class="bandera" src="assets/exchange/{{tasa.key}}.png" alt="{{tasa.key}}"> 
+            <p>{{ tasa.key }}</p>
+        </div>
+        <div class="data">
+            <p>Exchange: {{ tasa.value.toFixed(2) }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,20 @@
+<p>tarea09: treasure game</p>
+
+<div>
+    <input type="number" id="filas" [(ngModel)]="filas" placeholder="filas">
+    <input type="number" id="columnas" [(ngModel)]="columnas" placeholder="columnas">
+    <button (click)="pintarTabla($event)">Nueva tabla</button>
+    <button (click)="resetTabla()">Reset</button>
+</div>
+
+<div *ngIf="tabla">
+    <p>Llevas {{intentos}} intentos</p>
+
+    <table>
+        <tr *ngFor="let fila of filasArray; let i = index">
+            <td *ngFor="let columna of columnasArray; let j = index">
+                <div><img [src]="imagenSrc[i][j]" (click)="voltearImagen(i, j)" (click)="contador()"></div>
+            </td>
+        </tr>
+    </table>
+</div>

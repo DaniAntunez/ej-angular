@@ -1,0 +1,4 @@
+<input #imagen placeholder="imagen" type="text"/>
+<input #titulo placeholder="titulo" type="text"/>
+<input #grupo placeholder="grupo" type="text"/>
+<button (click)="sendNewDisco({imagen: imagen.value, titulo: titulo.value, grupo: grupo.value})">AñadirDisco</button>

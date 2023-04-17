@@ -1,0 +1,8 @@
+<div class="search">
+    <input type="text" [(ngModel)]="searchText">
+    <button (click)="getCharacters(1, searchText)">Search</button>
+</div>
+
+<app-gallery [list]="characters"></app-gallery>
+
+<app-pagination (changePageEmitter)="getCharacters($event, searchText)"></app-pagination>

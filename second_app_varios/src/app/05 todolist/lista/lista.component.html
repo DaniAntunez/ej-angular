@@ -1,0 +1,22 @@
+<p>tarea05: toDoList (input+ngFor+ngClass)</p>
+
+<p>lista total</p>
+<ul>
+    <li *ngFor="let item of data">{{item.name}} = {{item.isDone}}</li>
+</ul>
+
+<p>lista sólo completados</p>
+<ul>
+    <ng-container *ngFor="let item of data">
+        <li *ngIf="item.isDone">{{item.name}}</li>
+    </ng-container>
+</ul>
+
+<p>lista total+color+botón</p>
+<ul>
+    <ng-container *ngFor="let item of data">
+        <li [ngClass]="item.isDone == true ? 'done' : 'pending'" >{{item.name}} = {{item.isDone}}</li>
+        <button (click)="cambiaDone(item)">Cambia</button>
+    </ng-container>
+</ul>
+

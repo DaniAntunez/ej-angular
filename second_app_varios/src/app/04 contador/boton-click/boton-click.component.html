@@ -1,0 +1,7 @@
+<p>tarea04: botón contador (evento+ngIf)</p>
+
+<button (click) = "sumador()">Suma un año en tu cumple</button>
+<button (click) = "restador()">Resta año</button>
+<p>{{age}}</p>
+<p *ngIf="age < 18">Eres menor de edad</p>
+<p *ngIf="age >= 18">Enhorabuena ya eres mayor de edad</p>

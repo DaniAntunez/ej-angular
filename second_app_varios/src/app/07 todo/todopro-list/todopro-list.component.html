@@ -1,0 +1,7 @@
+<ul>
+    <li [ngClass]="{'done': item.isDone}" *ngFor="let item of data">
+        <input type="checkbox" [(ngModel)]="item.isDone">
+        {{item.name}} ({{item.isDone}})
+    </li>
+</ul>
+
